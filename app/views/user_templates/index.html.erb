@@ -1,1 +1,19 @@
-hi
+<h1>List of users</h1>
+<table border="1">
+  <tr>
+    <th> ID</th>
+    <th>Username</th>
+    <th></th>
+  </tr>
+  <% @list_of_users.each do |a_user| %>
+    <tr>
+      <%= a_user.id %>
+    </tr>
+    <tr>
+      <%= a_user.username %>
+    </tr>
+    <tr>
+      Show details
+    </tr>
+  <% end %>
+</table>
