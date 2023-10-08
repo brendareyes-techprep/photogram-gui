@@ -3,17 +3,13 @@
   <tr>
     <th> ID</th>
     <th>Username</th>
-    <th></th>
+    <th> </th>
   </tr>
   <% @list_of_users.each do |a_user| %>
-    <tr>
-      <%= a_user.id %>
-    </tr>
-    <tr>
-      <%= a_user.username %>
-    </tr>
-    <tr>
-      Show details
+    <tr> 
+    <td> <%= a_user.id %> 
+    <td> <%= a_user.username %> </td>
+    <td><a href="/users/<%= a_user.username %>">Show details</a></td>
     </tr>
   <% end %>
 </table>
