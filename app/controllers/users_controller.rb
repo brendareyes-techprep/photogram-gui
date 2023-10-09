@@ -25,4 +25,18 @@ class UsersController < ApplicationController
     #render({ :template => "user_templates/create"})
     redirect_to("/users/#{new_user.username}")
   end
+  def update
+    #Parameters: {"input_username"=>"hi", "path_username"=>"122"} 
+    the_id = params.fetch("path_username")
+    matching_user = User.where( :id => the_id)
+    the_user = matching_user.at(0)
+
+    input_user = params.fetch("input_username")
+
+    the_user.username = input_user
+
+    the_user.save
+  
+    redirect_to("/users/#{the_user.username}")
+  end
 end
